@@ -195,8 +195,8 @@ img.square, img.rectangle {
 width: 100%;
 height: auto;
 opacity: 0.8;
-filter: blur(0.75px);
--webkit-filter: blur(0.75px);
+filter: blur(0.5px);
+-webkit-filter: blur(0.5px);
 transition: all .75s ease;
 animation: LoadOn 1.5s ease-in-out;
 }
