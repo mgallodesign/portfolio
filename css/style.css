@@ -1,10 +1,13 @@
 :root {
-    --one: #BBE1FA;
-    --two: #3282B8;
-    --three: #0F4C75;
-    --four: #1B262C;
-    --main: 'Fraunces', serif;
-    --secondary: 'Noto Color Emoji', sans-serif;
+  --zero: #EBEFF2;
+  --one: #F0F8FF;
+  --two: #BBE1FA;
+  --three:#3282B8;
+  --four:#0F4C75;
+  --five:#1B262C;
+  --six: #DCD4CA;
+  --main: 'Fraunces', serif;
+  --secondary: 'Noto Color Emoji', sans-serif;
 }
 
 * {
@@ -15,6 +18,7 @@
 html {
   width: 100vw;
   height: auto;
+  background-color: var(--zero);
 }
 
 /* GRID AREA NAMES - REFERS TO BODY'S DISPLAY: GRID */
@@ -34,12 +38,11 @@ body {
   margin: .5%;
   padding: 1.5%;
   height: 94vh;
-  background: aliceblue;
   display: grid;
-  grid-template-columns: [column1] 1fr [column2] 3fr;
+  grid-template-columns: [column1] .75fr [column2] 3.25fr;
   grid-template-rows: [row1] 10% [row2] auto [row3] 5%;
   grid-template-areas: "header main" "nav main" "footer footer";
-  gap: 30px 20px;
+  gap: 30px 50px;
   place-items: start;
 }
 
@@ -47,14 +50,13 @@ body {
 header {
   width: 100%;
   height: 100%;
-  background-color: var(--two);
-  color: var(--one);
-  font-size: 100%;
-  font-weight: 100;
+  font-size: xx-large;
+  font-style: normal;
+  font-weight: 400;
   font-family: var(--main);
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: start;
   align-content: end;
   align-items: center;
 }
@@ -64,63 +66,111 @@ header > img {
 }
 
 a.name {
-  margin-left: -20px;
-  font-size: xx-large;
-  font-style: normal;
-  font-weight: 300;
+  margin-left: 2%;
+  color: var(--three);
   text-decoration: none;
-  color: var(--secondary);
   transition: all .25s ease-out;
 }
 
 a.name:hover {
-  color: var(--two);
-  transform: translateX(5px);
+  color: var(--four);
+  transform: translateX(10px);
 }
 
 /* NAV (FLEXBOX) */
 nav {
   width: 100%;
   height: 100%;
-  outline: 2px ridge var(--four);
-  border-radius: 1rem;
-  background: rgb(50,130,184);
-  background: linear-gradient(180deg, rgba(50,130,184,1) 20%, rgba(0,212,255,0) 100%);
+  border-right: 2px solid var(--six);
+  padding-right: 1em;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: flex-start;
+}
+
+nav > p.navbar {
+  width: 92%;
+  padding: 4%;
+  outline: 1.5px solid var(--six);
+  background-color: var(--six);
+  color: var(--four);
+  font-size: large;
+  font-weight: 500;
+  font-family: var(--main);
+  line-height: normal;
+}
+
+nav > a {
+  padding: 1em 0 1em 0;
+  border-bottom: 2px solid var(--six);
+  color: var(--three);
+  font-weight: 200;
+  font-size: large;
+  font-family: var(--main);
+  text-decoration: none;
+  transition: all .25s ease-out;
+}
+
+nav > a:hover {
+  color: var(--four);
+  transform: translateX(10px);
 }
 
 /* MAIN HERE*/
 main {
-  width: 100%;
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: start;
 }
 
 main > img {
-  width: 70%;
-  border-radius: 10px;
+  width: 75%;
+  border-radius: 2px;
+  filter: saturate(150%);
+  transition: all .75s ease;
+}
+
+main > p {
+  margin-top: 2%;
+  color: var(--four);
+  font-size: larger;
+  font-weight: 300;
+  font-family: var(--main);
+  line-height: normal;
   animation: SlideIn 1.2s ease-out;
 }
 
 /* FOOTER (GRID) */
 footer {
   width: 100%;
+  height: 100%;
+  border-top: 2px solid var(--six);
+  color: var(--four);
+  font-size: 100%;
+  font-weight: 100;
+  font-family: var(--main);
+  text-decoration: none;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
+
 footer > img {
-  width: 2%;
-  order: 5;
+  width: 1.5%;
+  filter: invert(45%);
 }
+
 a.email {
   font-style: normal;
   text-decoration: none;
 }
 
-/* Animation Goes Last, Always */
+/* ANIMATION IS LAST, ALWAYS */
 @keyframes SlideIn {
 0% {
   transform: translateX(20%);
@@ -132,445 +182,71 @@ a.email {
 }
 
 /*
-.spicerack {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: auto auto auto auto auto auto;
-  row-gap: 5em;
-  }
-  
-  .jar {
-  padding-left: 0%;
-  display: grid;
-  grid-template-columns: 22% 74%;
-  grid-template-rows: auto;
-  column-gap: 4%;
-  }
-  
-  .cap {
-  border-top: var(--six) 8px dotted;
-  padding-top: 5%;
-  font-size: 1.5em;
-  font-family: var(--fontt);
-  color: var(--two);
-  text-align: right;
-  }
-  
-  .label {
-  display: grid;
-  place-content: start space-between;
-  row-gap: 2.5em;
-  }
-  
-  .nutmeg{
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 30vh;
-  }
-  
-  .thyme{
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: 30vh;
-  }
-  
-  .ginger{
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: 30vh;
-  }
-  
-  .rosemary{
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: auto;
-    place-content: center space-between;
-  }
-  
-  .tumeric{
-  grid-template-columns: 30% 30% 30%;
-  grid-template-rows: 30vh 30vh;
-  }
-  
-  .cinnamon {
-  grid-template-columns: 30% 30% 30%;
-  grid-template-rows: 30vh;
-  } 
-  
-  .pepper {
-  grid-template-columns: 30% 30% 30%;
-  grid-template-rows: 30vh;
-  }
-  
-  .spice {
-  overflow: hidden;
-  width: auto;
-  height: auto;
-  background-color: transparent;
-  }
-  
-  .spicey {
-  overflow: visible;
-  width: auto;
-  height: auto;
-  }
-  
-  img.square, img.rectangle {
-  width: 100%;
-  height: auto;
-  opacity: 0.8;
-  filter: blur(0.5px);
-  -webkit-filter: blur(0.5px);
-  transition: all .75s ease;
-  animation: LoadOn 1.5s ease-in-out;
-  }
-  
-  img.rectangle {
-  width: auto;
-  height: 100%;
-  animation: LoadOn 1.5s ease-in-out;
-  }
-  
-  img.square:hover, img.rectangle:hover {
-  overflow: hidden;
-  opacity: 1;
-  filter: blur(0px);
-  -webkit-filter: blur(0px);
-  transform: scale(1.15);
-  }
-  
-  video {
-  animation: LoadOn 1.5s ease-in-out;
-  }
-
-Parameters For Small Devices (0px to 775px wide)
+/* MEDIA QUERY FOR SMALL DEVICES (0px to 775px wide)
 @media only screen and (max-width: 775px) and (min-width: 0px) {
-  .candywrapper {
-    grid-template-columns: 5% 90%;
-    grid-column-gap: 2%;
-    margin-bottom: 2em;
-    position: relative;
-  }
-  .milk {
-    font-size: 1em;
-  }
-  .chocolate {
-    grid-template-columns: 20% 14% 22%;
-    grid-column-gap: 5%;
-  }
-  .peanut {
-    font-size: 1em;
-  }
-  img.water, img.aboutpic {
-    display: inline-block;
-    position: relative;
-    top: 0;
-    left: 2.5vw;
-    width: 90vw;
-    height: auto;
-  }
-
-  .beans, .contactinfo {
-    display: inline-block;
-    position: relative;
-    margin-top: 5vh;
-    left: 2.5vw;
-    width: 80vw;
-    height: auto;
-    text-align: justify;
-    padding: 5vw;
-    font-size: 1em;
-  }
-  .spicerack {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 125vh 125vh 125vh 175vh 125vh;  
-    row-gap: 3em;
-    }
-    
-  .jar {
-    padding-left: 0%;
-    display: grid;
-    grid-template-rows: 4% 92%;
-    grid-template-columns: 100%;
-    row-gap: 4%;
-  }
-  
-  .cap {
-    border-top: none;
-    border-bottom: var(--six) 4px dotted;
-    padding-top: 0;
-    padding-bottom: 5%;
-    font-size: 1.25em;
-    text-align: left;
-  }
-  
-  .label {
-    display: grid;
-    place-content: start start;
-    row-gap: 2%;
-  }
-
-  .nutmeg{
-    grid-template-columns: 100%;
-    grid-template-rows: 50% 50%;
-  }
-
-  .thyme, .tumeric,{
-    grid-template-columns: 100%;
-    grid-template-rows: 30% 30% 30%;
-  }
-
-  .rosemary{
-    grid-template-columns: 100%;
-    grid-template-rows: 30% 30% 30%;
-    place-content: space-between start;
-  }
-
-  .ginger{
-    grid-template-columns: 80%;
-    grid-template-rows: 30% 30% 30%;
-  }
-
-  .cinnamon {
-    grid-template-columns: 100%;
-    grid-template-rows: 25% 25% 25% 25%;
-  }
-  
-  .pepper {
-    grid-template-columns: 90%;
-    grid-template-rows: 30% 30% 30%;
-  }
-
-  .spice {
-    overflow: hidden;
-    width: auto;
-    height: auto;
-    background-color: transparent;
+  nav {
   }
 }
 
-Parameters For Medium Devices (776px to 1025px wide) 
+/* MEDIA QUERY FOR MEDIUM DEVICES
 @media only screen and (max-width: 1025px) and (min-width: 776px) {
-  .candywrapper {
-    grid-template-columns: 5% 90%;
-    grid-column-gap: 5%;
-    margin-bottom: 4em;
-    position: relative;
-  }
-  .milk {
-    font-size: 2em;
-  }
-  .chocolate {
-    grid-template-columns: 12% 10% 16%;
-    grid-column-gap: 5%;
-  }
-  .peanut {
-    font-size: 1.25em;
-  }
-  img.water,img.aboutpic {
-    display: inline-block;
-    position: relative;
-    top: 0;
-    left: 2.5vw;
-    width: 90vw;
-    height: auto;
-  }
-  .beans, .contactinfo {
-    display: inline-block;
-    position: relative;
-    margin-top: 5vh;
-    left: 2.5vw;
-    width: 80vw;
-    height: auto;
-    text-align: justify;
-    padding: 5vw;
-    font-size: 2em;
-  }
-
-  .spicerack {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 60vh 60vh 60vh 80vh 60vh;  
-    row-gap: 3em;
-    }
-    
-  .jar {
-    padding-left: 0%;
-    display: grid;
-    grid-template-rows: 8% 84%;
-    grid-template-columns: 100%;
-    row-gap: 6%;
-  }
-  
-  .cap {
-    border-top: none;
-    border-bottom: var(--six) 5px dotted;
-    padding-top: 0;
-    padding-bottom: 5%;
-    font-size: 2em;
-    text-align: left;
-  }
-  
-  .label {
-    display: grid;
-    place-content: start start;
-    grid-gap: 2%;
-  }
-
-  .thyme, .tumeric, .ginger, .cinnamon, .pepper, .nutmeg{
-    grid-template-columns: 49% 49%;
-    grid-template-rows: 50% 50%;
-  } 
-
-  .rosemary{
-    grid-template-columns: 49% 49%;
-    grid-template-rows: 50% 50%;
-    place-content: start start;
-  }
+  nav {}
 }
 
-Parameters For Large Devices (1026px and wider) 
+/* MEDIA QUERY FOR LARGE DEVICES (1026px and wider)
 @media only screen and (min-width: 1026px) {
-  .candywrapper {
-      z-index: 1;
-      top: 0;
-      margin-bottom: 5em;
-      position: sticky;
-      display: grid;
-      grid-template-columns: 20% 75%;
-      grid-column-gap: 2%;
-    }
-  .milk {
-    font-size: 2.5em;
-  }
-  .chocolate {
-    grid-template-columns: 8% 6% 10%;
-    grid-column-gap: 5%;
-  }
-  .peanut {
-    font-size: 2em;
-  }
-  img.water, img.aboutpic {
-    display: inline;
+    .modal {
+    opacity: 0;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.646);
     position: fixed;
-    left: 32%;
-    width: 60vw;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    transition: opacity 0.1s ease-in-out;
   }
-  .beans, .contactinfo {
-    display: inline-block;
-    position: fixed;
-    top: 35%;
-    left: 8%;
-    width: 25vw;
-    padding: 2%;
-    text-align: justify;
-    font-size: 1.5em;
-  } 
-}
 
-.modal {
-  opacity: 0;
-  pointer-events: none;
-  background-color: rgba(0, 0, 0, 0.646);
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  transition: opacity 0.1s ease-in-out;
-}
-.modal--open {
-  opacity: 1;
-  pointer-events: all;
-}
-.modal__image {
-  position: absolute;
-  width: 90%;
-  max-width: 1000px;
-  height: auto;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-}
-
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  height: 30px;
-  width: 30px;
-  cursor: pointer;
-}
-
-.modal-close:before, .modal-close:after {
-  position: absolute;
-  background-color: white;
-  content: "";
-  top: 0;
-  right: 15px;
-  width: 3px;
-  height: 30px;
-}
-.modal-close:before {
-  transform: rotate(45deg);
-}
-.modal-close:after {
-  transform: rotate(-45deg);
-}
-
-/* The Modal (background)
-.modal {
-  /* display: none;  Hidden by default
-  position: fixed; /* Stay in place
-  /* z-index: 1;  Sit on top
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width
-  height: 100%; /* Full height 
-  /* overflow: auto;  Enable scroll if needed
-  background-color: rgb(0,0,0); /* Fallback color
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(1.1);
-  transition: visibility 0s linear 0.25s, opacity .25s 0s, transform .25s;
-}
-
-Modal Content/Box 
-.modal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered 
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size
-}
-
-The Close Button 
-.close-button {
-  color: #aaa;
-  float: right;
-  width: 1.5rem;
-  line-height: 1.5rem;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 0.25rem;
-  background-color: grey;
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.close-button:hover {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.show-modal {
+  .modal--open {
     opacity: 1;
-    visibility: visible;
-    transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity .25s 0s, transform .25s;
-}
+    pointer-events: all;
+  }
 
+  .modal__image {
+    position: absolute;
+    width: 90%;
+    max-width: 1000px;
+    height: auto;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+  }
+
+  .modal-close:before, .modal-close:after {
+    position: absolute;
+    background-color: white;
+    content: "";
+    top: 0;
+    right: 15px;
+    width: 3px;
+    height: 30px;
+  }
+
+  .modal-close:before {
+    transform: rotate(45deg);
+  }
+
+  .modal-close:after {
+    transform: rotate(-45deg);
+  }
+}
 */
