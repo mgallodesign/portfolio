@@ -1,9 +1,10 @@
 :root {
-    --one: #c27329;
-    --two: #66adcc;
-    --three: #5454d1;
-    --main: 'Rubik', sans-serif;
-    --secondary: 'Libre Baskerville', serif;
+    --one: #BBE1FA;
+    --two: #3282B8;
+    --three: #0F4C75;
+    --four: #1B262C;
+    --main: 'Fraunces', serif;
+    --secondary: 'Noto Color Emoji', sans-serif;
 }
 
 * {
@@ -14,143 +15,123 @@
 html {
   width: 100vw;
   height: auto;
-  font-size: 100%;
 }
 
-body {
-  margin: 1%;
-  padding: 0.5%;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  background-image: url("../images/IMG_Bee.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+/* GRID AREA NAMES - REFERS TO BODY'S DISPLAY: GRID */
+header {
+  grid-area: header;
 }
-
-img {
-  width: 50%;
-}
-
-/*
 nav {
-  z-index: 1;
-  position: sticky;
-  display: inline-flex;
-  justify-content: space-around;
+  grid-area: nav;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+}
+body {
+  margin: .5%;
+  padding: 1.5%;
+  height: 94vh;
+  background: aliceblue;
+  display: grid;
+  grid-template-columns: [column1] 1fr [column2] 3fr;
+  grid-template-rows: [row1] 10% [row2] auto [row3] 5%;
+  grid-template-areas: "header main" "nav main" "footer footer";
+  gap: 30px 20px;
+  place-items: start;
 }
 
-div.wind {
-  font-size: 70px;
-  font-family: var(--fonthree);
+/* HEADER (FLEXBOX) */
+header {
+  width: 100%;
+  height: 100%;
+  background-color: var(--two);
+  color: var(--one);
+  font-size: 100%;
+  font-weight: 100;
+  font-family: var(--main);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-content: end;
+  align-items: center;
+}
+
+header > img {
+  height: 8vh;
 }
 
 a.name {
-  margin-left: 1.5%;
-  line-height: 1.5em;
-  font-size: 50px;
-  font-weight: bold;
+  margin-left: -20px;
+  font-size: xx-large;
   font-style: normal;
-  font-family: var(--fontone);
-  color: var(--five);
+  font-weight: 300;
   text-decoration: none;
-  transition: all .75s ease-out;
-}
-
-a.name:hover {
-  color: #5598B4;
-  font-style: italic;
-  transform: translateX(10px);
-}
-
-a.socials, a.contact {
-  line-height: 1em;
-  font-size: 1.75em;
-  font-weight: 400;
-  font-style: normal;
-  font-family: var(--fontone);
-  color: var(--five);
-  text-decoration: none;
-  transition: all .5s ease-in-out;
-}
-
-a.socials:hover, a.contact:hover {
-  transform: translateY(-5px);
-}
-
-hr {
-  padding-bottom: .5%;
-  border: 4px dotted var(--five);
-  border-style: none none dotted;
-}
-
-main {
-  flex-grow: 1;
-  display: block;
-}
-
-img.snow {
-  border-radius: 10px;
-  width: 50%;
-  display: block;
-  background-color: var(--four);
-  font-family: var(--fontone);
-  color: var(--five);
-  animation: SlideIn 1.2s ease-out;
-}
-
-p.text {
-  width: 40%;
-  font-size: 1.5em;
-  font-family: var(--fontone);
-  color: var(--five);
-}
-
-footer {
-  margin: 0% -2.25% 0% -2.25%;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: baseline;
-  gap: 1%;
-  background-color: var(--five);
-}
-
-a.link {
-  padding: 1.25%;
-  font-size: 110%;
-  font-weight: 700;
-  font-style: italic;
-  font-family: var(--fontone);
-  color: var(--one);
-  background-color: var(--five);
-  text-decoration: none;
+  color: var(--secondary);
   transition: all .25s ease-out;
 }
 
-a.link:hover {
-  color: var(--five);
-  background-color: var(--one);
-}
-
-a.link:visited {
-  font-weight: 600;
-  font-style: normal;
+a.name:hover {
   color: var(--two);
+  transform: translateX(5px);
 }
 
-/* Animation Goes Last, Always
-  @keyframes SlideIn {
-  0% {
-    transform: translateX(20%);
-    opacity: 0.1;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+/* NAV (FLEXBOX) */
+nav {
+  width: 100%;
+  height: 100%;
+  outline: 2px ridge var(--four);
+  border-radius: 1rem;
+  background: rgb(50,130,184);
+  background: linear-gradient(180deg, rgba(50,130,184,1) 20%, rgba(0,212,255,0) 100%);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
 
+/* MAIN HERE*/
+main {
+  width: 100%;
+}
+
+main > img {
+  width: 70%;
+  border-radius: 10px;
+  animation: SlideIn 1.2s ease-out;
+}
+
+/* FOOTER (GRID) */
+footer {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+footer > img {
+  width: 2%;
+  order: 5;
+}
+a.email {
+  font-style: normal;
+  text-decoration: none;
+}
+
+/* Animation Goes Last, Always */
+@keyframes SlideIn {
+0% {
+  transform: translateX(20%);
+  opacity: 0.1;
+}
+100% {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/*
 .spicerack {
   display: grid;
   grid-template-columns: 100%;
