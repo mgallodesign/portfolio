@@ -1,11 +1,11 @@
 :root {
-  --zero: #EBEFF2;
-  --one: #F0F8FF;
-  --two: #BBE1FA;
-  --three:#3282B8;
-  --four:#0F4C75;
-  --five:#1B262C;
-  --six: #DCD4CA;
+  --zero: #FAF1EB;
+  --one: #D5EAF5;
+  --two: #AFE3FE;
+  --three: #61BCF9;
+  --four:#9F7E69;
+  --five:#3F454D;
+  --six: #CAB4A5;
   --main: 'Fraunces', serif;
   --secondary: 'Noto Color Emoji', sans-serif;
 }
@@ -18,7 +18,6 @@
 html {
   width: 100vw;
   height: auto;
-  background-color: var(--zero);
 }
 
 /* GRID AREA NAMES - REFERS TO BODY'S DISPLAY: GRID */
@@ -41,7 +40,7 @@ body {
   display: grid;
   grid-template-columns: [column1] .75fr [column2] 3.25fr;
   grid-template-rows: [row1] 10% [row2] auto [row3] 5%;
-  grid-template-areas: "header main" "nav main" "footer footer";
+  grid-template-areas: "header main" "nav main" "footer main";
   gap: 30px 50px;
   place-items: start;
 }
@@ -67,13 +66,13 @@ header > img {
 
 a.name {
   margin-left: 2%;
-  color: var(--three);
+  color: var(--five);
   text-decoration: none;
   transition: all .25s ease-out;
 }
 
 a.name:hover {
-  color: var(--four);
+  color: var(--three);
   transform: translateX(10px);
 }
 
@@ -81,7 +80,8 @@ a.name:hover {
 nav {
   width: 100%;
   height: 100%;
-  border-right: 2px solid var(--six);
+  overflow: scroll;
+  border-right: 0px solid var(--four);
   padding-right: 1em;
   display: flex;
   flex-flow: column nowrap;
@@ -89,24 +89,25 @@ nav {
   align-items: flex-start;
 }
 
-nav > p.navbar {
-  width: 92%;
+nav > p {
+  width: 90%;
   padding: 4%;
-  outline: 1.5px solid var(--six);
-  background-color: var(--six);
-  color: var(--four);
-  font-size: large;
+  outline: 1.5px solid var(--four);
+  background-color: var(--four);
+  color: var(--zero);
+  font-size: larger;
   font-weight: 500;
   font-family: var(--main);
   line-height: normal;
 }
 
 nav > a {
-  padding: 1em 0 1em 0;
-  border-bottom: 2px solid var(--six);
-  color: var(--three);
+  width: 80%;
+  padding: 1em;
+  border-bottom: 1px solid var(--six);
+  color: var(--five);
   font-weight: 200;
-  font-size: large;
+  font-size: medium;
   font-family: var(--main);
   text-decoration: none;
   transition: all .25s ease-out;
@@ -119,35 +120,48 @@ nav > a:hover {
 
 /* MAIN HERE*/
 main {
-  width: 80%;
-  height: auto;
+  width: auto;
+  height: 94%;
+  padding: 2%;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: start;
-  align-items: start;
+  justify-content: center;
+  align-items: center;
 }
 
 main > img {
   width: 75%;
-  border-radius: 2px;
-  filter: saturate(150%);
+  border-radius: 5px;
+  filter: saturate(0%) blur(1px);
   transition: all .75s ease;
 }
 
-main > p {
+main > img:hover {
+  filter: saturate(150%) blur(0px);
+}
+
+main > div {
+  width: 75%;
   margin-top: 2%;
-  color: var(--four);
-  font-size: larger;
-  font-weight: 300;
+  background-color: #E2D3C8;
+}
+
+div > p {
+  padding: 1em;
+  color: #6F625B;
+  font-size: large;
+  font-weight: 400;
   font-family: var(--main);
-  line-height: normal;
-  animation: SlideIn 1.2s ease-out;
+  text-align: center;
+  line-height: 2em;
+  animation: SlideIn 1s ease-in-out;
 }
 
 /* FOOTER (GRID) */
 footer {
-  width: 100%;
+  width: 90%;
   height: 100%;
+  padding: .5em;
   border-top: 2px solid var(--six);
   color: var(--four);
   font-size: 100%;
@@ -160,93 +174,41 @@ footer {
   align-items: center;
 }
 
-footer > img {
-  width: 1.5%;
+img.icon {
+  width: 20%;
   filter: invert(45%);
 }
 
 a.email {
   font-style: normal;
   text-decoration: none;
+  font-size: medium;
+}
+
+/* Small devices */
+@media all and (max-width: 500px) {
+  body {
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav > a {
+    display: none;
+  }
+  main > img {
+    display: none;
+  }
 }
 
 /* ANIMATION IS LAST, ALWAYS */
 @keyframes SlideIn {
 0% {
-  transform: translateX(20%);
+  transform: translateY(10%);
   opacity: 0.1;
 }
 100% {
-  transform: translateX(0);
+  transform: translateY(0);
   opacity: 1;
 }
-
-/*
-/* MEDIA QUERY FOR SMALL DEVICES (0px to 775px wide)
-@media only screen and (max-width: 775px) and (min-width: 0px) {
-  nav {
-  }
-}
-
-/* MEDIA QUERY FOR MEDIUM DEVICES
-@media only screen and (max-width: 1025px) and (min-width: 776px) {
-  nav {}
-}
-
-/* MEDIA QUERY FOR LARGE DEVICES (1026px and wider)
-@media only screen and (min-width: 1026px) {
-    .modal {
-    opacity: 0;
-    pointer-events: none;
-    background-color: rgba(0, 0, 0, 0.646);
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    top: 0;
-    left: 0;
-    transition: opacity 0.1s ease-in-out;
-  }
-
-  .modal--open {
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  .modal__image {
-    position: absolute;
-    width: 90%;
-    max-width: 1000px;
-    height: auto;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-  }
-
-  .modal-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-  }
-
-  .modal-close:before, .modal-close:after {
-    position: absolute;
-    background-color: white;
-    content: "";
-    top: 0;
-    right: 15px;
-    width: 3px;
-    height: 30px;
-  }
-
-  .modal-close:before {
-    transform: rotate(45deg);
-  }
-
-  .modal-close:after {
-    transform: rotate(-45deg);
-  }
-}
-*/
