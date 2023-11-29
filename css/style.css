@@ -34,12 +34,11 @@ footer {
   grid-area: footer;
 }
 body {
-  margin: .5%;
-  padding: 1.5%;
+  padding: 2%;
   height: 94vh;
   display: grid;
   grid-template-columns: [column1] .75fr [column2] 3.25fr;
-  grid-template-rows: [row1] 10% [row2] auto [row3] 5%;
+  grid-template-rows: [row1] 10% [row2] auto [row3] 4%;
   grid-template-areas: "header main" "nav main" "footer main";
   gap: 30px 50px;
   place-items: start;
@@ -49,10 +48,6 @@ body {
 header {
   width: 100%;
   height: 100%;
-  font-size: xx-large;
-  font-style: normal;
-  font-weight: 400;
-  font-family: var(--main);
   display: flex;
   flex-flow: row nowrap;
   justify-content: start;
@@ -61,12 +56,17 @@ header {
 }
 
 header > img {
-  height: 8vh;
+  width: 25%;
 }
 
 a.name {
-  margin-left: 2%;
+  width: 72%;
+  margin-left: 3%;
   color: var(--five);
+  font-family: var(--main);
+  font-size: xx-large;
+  font-style: normal;
+  font-weight: 400;
   text-decoration: none;
   transition: all .25s ease-out;
 }
@@ -81,36 +81,38 @@ nav {
   width: 100%;
   height: 100%;
   overflow: scroll;
-  border-right: 0px solid var(--four);
-  padding-right: 1em;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
 nav > p {
-  width: 90%;
+  width: 92%;
   padding: 4%;
-  outline: 1.5px solid var(--four);
-  background-color: var(--four);
+  border-radius: 2px;
   color: var(--zero);
   font-size: larger;
   font-weight: 500;
   font-family: var(--main);
   line-height: normal;
+  background-color: var(--four);
 }
 
 nav > a {
-  width: 80%;
-  padding: 1em;
   border-bottom: 1px solid var(--six);
+  width: 90%;
+  padding: 5%;
   color: var(--five);
-  font-weight: 200;
   font-size: medium;
+  font-weight: 200;
   font-family: var(--main);
   text-decoration: none;
   transition: all .25s ease-out;
+}
+
+nav > a.last {
+  border-bottom: 0px;
 }
 
 nav > a:hover {
@@ -118,21 +120,22 @@ nav > a:hover {
   transform: translateX(10px);
 }
 
-/* MAIN HERE*/
+/* MAIN HERE */
 main {
   width: auto;
-  height: 94%;
-  padding: 2%;
+  height: 100%;
+  overflow: scroll;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  row-gap: 2vh;
 }
 
 main > img {
   width: 75%;
-  border-radius: 5px;
-  filter: saturate(0%) blur(1px);
+  border-radius: 2px;
+  filter: saturate(35%) blur(1px);
   transition: all .75s ease;
 }
 
@@ -142,7 +145,6 @@ main > img:hover {
 
 main > div {
   width: 75%;
-  margin-top: 2%;
   background-color: #E2D3C8;
 }
 
@@ -159,30 +161,29 @@ div > p {
 
 /* FOOTER (GRID) */
 footer {
-  width: 90%;
-  height: 100%;
-  padding: .5em;
   border-top: 2px solid var(--six);
-  color: var(--four);
-  font-size: 100%;
-  font-weight: 100;
-  font-family: var(--main);
-  text-decoration: none;
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
+.tab {
+  margin-top: 2%;
+  padding: 2%;
+}
+
 img.icon {
-  width: 20%;
+  width: 30%;
   filter: invert(45%);
 }
 
 a.email {
+  font-size: x-large;
   font-style: normal;
+  font-family: var(--secondary);
   text-decoration: none;
-  font-size: medium;
 }
 
 /* Small devices */
@@ -212,3 +213,6 @@ a.email {
   transform: translateY(0);
   opacity: 1;
 }
+
+
+  /* outline: 0px solid var(--four); */
