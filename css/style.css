@@ -186,7 +186,7 @@ a.email {
   text-decoration: none;
 }
 
-/* Small devices */
+/* MEDIA QUEREY FOR SMALL DEVICES */
 @media all and (max-width: 500px) {
   body {
     height: auto;
