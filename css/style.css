@@ -1,11 +1,14 @@
 :root {
-  --zero: #FAF1EB;
-  --one: #D5EAF5;
-  --two: #AFE3FE;
-  --three: #61BCF9;
-  --four:#9F7E69;
+  --one: #139BF6;
+  --two: #61BCF9;
+  --three: #AFE3FE;
+  --four: #D5EAF5;
   --five:#3F454D;
-  --six: #CAB4A5;
+  --six:#6F625B;
+  --seven:#9F7E69;
+  --eight:#CAB4A5;
+  --nine: #E2D3C8;
+  --ten: #FAF1EB;
   --main: 'Fraunces', serif;
   --secondary: 'Noto Color Emoji', sans-serif;
 }
@@ -18,6 +21,7 @@
 html {
   width: 100vw;
   height: auto;
+  
 }
 
 /* GRID AREA NAMES - REFERS TO BODY'S DISPLAY: GRID */
@@ -36,10 +40,12 @@ footer {
 body {
   padding: 2%;
   height: 94vh;
+  overflow: hidden;
+  background-color: var(--ten);
   display: grid;
-  grid-template-columns: [column1] .75fr [column2] 3.25fr;
+  grid-template-columns: [column1] 1fr [column2] 3.5fr;
   grid-template-rows: [row1] 10% [row2] auto [row3] 4%;
-  grid-template-areas: "header main" "nav main" "footer main";
+  grid-template-areas: "header header" "nav main" "footer main";
   gap: 30px 50px;
   place-items: start;
 }
@@ -48,6 +54,7 @@ body {
 header {
   width: 100%;
   height: 100%;
+  background-color: var(--ten);
   display: flex;
   flex-flow: row nowrap;
   justify-content: start;
@@ -56,7 +63,7 @@ header {
 }
 
 header > img {
-  width: 25%;
+  height: 85%;
 }
 
 a.name {
@@ -130,6 +137,11 @@ main {
   justify-content: center;
   align-items: center;
   row-gap: 2vh;
+
+  opacity: 0.8;
+  background-size: 20px 20px;
+  background-image:  radial-gradient(var(--six) 0.5px, transparent 0.5px), radial-gradient(var(--six) 0.5px, var(--ten) 0.5px);
+  background-position: 0 0,10px 10px;
 }
 
 main > img {

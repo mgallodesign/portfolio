@@ -33,14 +33,15 @@ main {
 footer {
   grid-area: footer;
 }
+
 body {
   padding: 2%;
-  height: auto;
+  height: 94vh;
   display: grid;
   grid-template-columns: [column1] .75fr [column2] 3.25fr;
-  grid-template-rows: [row1] 10% [row2] 96% [row3] 4%;
+  grid-template-rows: [row1] 10% [row2] auto [row3] 4%;
   grid-template-areas: "header main" "nav main" "footer main";
-  gap: 30px 70px;
+  gap: 30px 50px;
   place-items: start;
 }
 
