@@ -1,8 +1,8 @@
 :root {
-  --one: #139BF6;
-  --two: #61BCF9;
-  --three: #AFE3FE;
-  --four: #D5EAF5;
+  --one: #D5EAF5;
+  --two: #AFE3FE;
+  --three: #61BCF9;
+  --four: #139BF6;
   --five:#3F454D;
   --six:#6F625B;
   --seven:#9F7E69;
@@ -42,16 +42,14 @@ body {
   height: 94vh;
   overflow: hidden;
   background-color: var(--ten);
-
   opacity: 0.8;
   background-size: 20px 20px;
   background-image:  radial-gradient(var(--six) 0.5px, transparent 0.5px), radial-gradient(var(--six) 0.5px, var(--ten) 0.5px);
   background-position: 0 0,10px 10px;
-
   display: grid;
   grid-template-columns: [column1] 1fr [column2] 3.5fr;
   grid-template-rows: [row1] 10% [row2] auto [row3] 4%;
-  grid-template-areas: "header header" "nav main" "footer main";
+  grid-template-areas: "header ." "nav main" "footer main";
   gap: 30px 50px;
   place-items: start;
 }
@@ -85,7 +83,7 @@ a.name {
 }
 
 a.name:hover {
-  color: var(--one);
+  color: var(--four);
   transform: translateX(10px);
 }
 
@@ -104,8 +102,8 @@ nav > p {
   width: 92%;
   padding: 4%;
   border-radius: 2px;
-  background-color: var(--eight);
-  color: var(--five);
+  background-color: var(--nine);
+  color: var(--six);
   font-size: larger;
   font-weight: 500;
   font-family: var(--main);
@@ -117,9 +115,9 @@ nav > a {
   width: 90%;
   padding: 5%;
   background-color: var(--ten);
-  color: var(--five);
+  color: var(--six);
   font-size: medium;
-  font-weight: 200;
+  font-weight: 300;
   font-family: var(--main);
   text-decoration: none;
   transition: all .25s ease-out;
@@ -130,7 +128,7 @@ nav > a.last {
 }
 
 nav > a:hover {
-  color: var(--one);
+  color: var(--four);
   transform: translateX(10px);
 }
 
