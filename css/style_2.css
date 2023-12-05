@@ -49,7 +49,7 @@ body {
   display: grid;
   grid-template-columns: [column1] 1fr [column2] 3.5fr;
   grid-template-rows: [row1] 10% [row2] auto [row3] 4%;
-  grid-template-areas: "header header" "nav main" "footer main";
+  grid-template-areas: "header main" "nav main" "footer main";
   gap: 30px 50px;
   place-items: start;
 }
@@ -128,47 +128,73 @@ nav > a.last {
 }
 
 nav > a:hover {
-  color: var(--one);
+  color: var(--four);
   transform: translateX(10px);
 }
 
 /* MAIN HERE */
 main {
+  padding: 4%;
   width: auto;
   height: 100%;
   overflow: scroll;
+  background-color: var(--ten);
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: stretch;
   row-gap: 2vh;
 }
 
-main > img {
-  width: 75%;
-  border-radius: 2px;
-  filter: saturate(35%) blur(.75px);
-  transition: all .25s ease-in;
+main > div.pagetitle {
+  width: 96%;
+  padding: 2%;
+  background-color: var(--two);
+  color: var(--five);
+  font-family: var(--main);
+  animation: SlideInX 1s ease-in-out;
 }
 
-main > img:hover {
-  filter: saturate(150%) blur(0px);
-}
-
-main > div {
-  width: 75%;
-  background-color: #E2D3C8;
-}
-
-div > p {
-  padding: 1em;
-  color: #6F625B;
+h4 {
   font-size: large;
   font-weight: 400;
+  text-align: left;
+  line-height: 2em;
+}
+
+main > p {
+  padding: 3% 5% 3% 0%;
+  color: var(--five);
+  font-size: medium;
+  font-weight: 300;
+  font-family: var(--main);
+  line-height: 1.5em;
+}
+
+main > img {
+  width: 70%;
+  border-radius: 2px;
+}
+
+figcaption {
+  width: 70%;
+  color: var(--four);
+  font-size: medium;
+  font-style: italic;
   font-family: var(--main);
   text-align: center;
-  line-height: 2em;
-  animation: SlideIn 1s ease-in-out;
+}
+
+div.multishot {
+  width: 70%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: start;
+  align-items: start;
+}
+
+div > img {
+  width: 50%;
 }
 
 /* FOOTER (GRID) */
@@ -216,13 +242,13 @@ a.email {
 }
 
 /* ANIMATION IS LAST, ALWAYS */
-@keyframes SlideIn {
+@keyframes SlideInX {
 0% {
-  transform: translateY(10%);
+  transform: translateX(5%);
   opacity: 0.1;
 }
 100% {
-  transform: translateY(0);
+  transform: translateX(0);
   opacity: 1;
 }
 

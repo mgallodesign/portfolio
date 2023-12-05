@@ -139,13 +139,13 @@ main {
   overflow: scroll;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   row-gap: 2vh;
 }
 
 main > img {
-  width: 75%;
+  width: 65%;
   border-radius: 2px;
   filter: saturate(35%) blur(.75px);
   transition: all .25s ease-in;
@@ -156,13 +156,10 @@ main > img:hover {
 }
 
 main > div {
-  width: 75%;
-  background-color: #E2D3C8;
-}
-
-div > p {
-  padding: 1em;
-  color: #6F625B;
+  width: 63%;
+  padding: 1%;
+  background-color: var(--two);
+  color: var(--five);
   font-size: large;
   font-weight: 400;
   font-family: var(--main);
