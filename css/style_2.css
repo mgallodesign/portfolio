@@ -72,7 +72,7 @@ header > img {
 
 a.name {
   width: 72%;
-  margin-left: 1%;
+  margin-left: 1.5%;
   color: var(--five);
   font-family: var(--main);
   font-size: xx-large;
@@ -149,7 +149,7 @@ main {
 main > div.pagetitle {
   width: 96%;
   padding: 2%;
-  background-color: var(--two);
+  background-color: var(--one);
   color: var(--five);
   font-family: var(--main);
   animation: SlideInX 1s ease-in-out;
