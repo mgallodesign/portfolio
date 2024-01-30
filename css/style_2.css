@@ -21,7 +21,6 @@
 html {
   width: 100vw;
   height: auto;
-  
 }
 
 /* GRID AREA NAMES - REFERS TO BODY'S DISPLAY: GRID */
@@ -58,7 +57,6 @@ body {
 header {
   width: 100%;
   height: 100%;
-  background-color: var(--ten);
   display: flex;
   flex-flow: row nowrap;
   justify-content: start;
@@ -138,7 +136,6 @@ main {
   width: auto;
   height: 100%;
   overflow: scroll;
-  background-color: var(--ten);
   display: flex;
   flex-flow: column nowrap;
   justify-content: start;
@@ -149,7 +146,7 @@ main {
 main > div.pagetitle {
   width: 96%;
   padding: 2%;
-  background-color: var(--one);
+  background-color: var(--two);
   color: var(--five);
   font-family: var(--main);
   animation: SlideInX 1s ease-in-out;
@@ -163,7 +160,8 @@ h4 {
 }
 
 main > p {
-  padding: 3% 5% 3% 0%;
+  padding: 2%;
+  background-color: var(--ten);
   color: var(--five);
   font-size: medium;
   font-weight: 300;
@@ -176,26 +174,128 @@ main > img {
   border-radius: 2px;
 }
 
-figcaption {
-  width: 70%;
-  color: var(--four);
-  font-size: medium;
-  font-style: italic;
-  font-family: var(--main);
-  text-align: center;
-}
-
-div.multishot {
-  width: 70%;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: start;
-  align-items: start;
-}
-
 div > img {
   width: 50%;
 }
+
+
+.container
+{
+	width: 100%;
+	height: 100%;
+}
+
+.trans
+{
+	transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+}
+.top
+{
+	display: inline-block;
+	width: 68vw;
+}
+.top ul
+{
+	list-style: none;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	box-sizing: border-box;
+}
+.top ul li
+{
+	position: relative;
+	float: left;
+	width: 25%;
+	height: 25%;
+	overflow: hidden;
+}
+
+.top ul li::before
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: '';
+  background-color: var(--ten);
+	opacity: 0.5;
+	text-align: center;
+	box-sizing: border-box;
+	pointer-events: none;
+	transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+}
+.top ul li:hover::before
+{
+	opacity: 0;
+	background-color: rgba(0,0,0,0.90);
+}
+.top ul li img
+{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.lightbox
+{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.75);
+	z-index: 999;
+	opacity: 0;
+	pointer-events: none;
+}
+.lightbox img
+{
+	max-width: 90%;
+	max-height: 80%;
+	position: relative;
+	top: -100%;
+	/* Transition */
+	transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+}
+.lightbox:target
+{
+	outline: none;
+	top: 0;
+	opacity: 1;
+	pointer-events: auto;
+	transition: all 1.2s ease;
+	-moz-transition: all 1.2s ease;
+	-ms-transition: all 1.2s ease;
+	-o-transition: all 1.2s ease;
+	-webkit-transition: all 1.2s ease;
+}
+.lightbox:target img
+{
+	top: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+
+
+
 
 /* FOOTER (GRID) */
 footer {
@@ -233,11 +333,24 @@ a.email {
     justify-content: space-between;
     align-items: center;
   }
-  nav > a {
-    display: none;
+}
+
+/* Styles for mobile and tablets */
+@media only screen and (max-width: 1023px) {
+  .slider-wrapper .slide-button {
+    display: none !important;
   }
-  main > img {
-    display: none;
+  .slider-wrapper .image-list {
+    gap: 10px;
+    margin-bottom: 15px;
+    scroll-snap-type: x mandatory;
+  }
+  .slider-wrapper .image-list .image-item {
+    width: 280px;
+    height: 380px;
+  }
+  .slider-scrollbar .scrollbar-thumb {
+    width: 20%;
   }
 }
 
@@ -251,6 +364,3 @@ a.email {
   transform: translateX(0);
   opacity: 1;
 }
-
-
-  /* outline: 0px solid var(--four); */

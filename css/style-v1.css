@@ -58,7 +58,7 @@ body {
 header {
   width: 100%;
   height: 100%;
-  background-color: var(--ten);
+  background-color: #faf1eb80;
   display: flex;
   flex-flow: row nowrap;
   justify-content: start;
@@ -147,12 +147,6 @@ main {
 main > img {
   width: 65%;
   border-radius: 2px;
-  filter: saturate(35%) blur(.75px);
-  transition: all .25s ease-in;
-}
-
-main > img:hover {
-  filter: saturate(150%) blur(0px);
 }
 
 main > div {
@@ -222,6 +216,4 @@ a.email {
   transform: translateY(0);
   opacity: 1;
 }
-
-
   /* outline: 0px solid var(--four); */
