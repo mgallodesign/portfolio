@@ -7,101 +7,108 @@
         <link rel="stylesheet" href="../css/style_2.css">
         <link rel="icon" type="image/x-icon" href="../images/src/512.gif">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,100;1,9..144,200;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700;1,9..144,800;1,9..144,900&family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+        <!--MAKE COMMENTS HERE-->
+        <meta property=’og:title’ content='My Portfolio' />
+        <meta property=’og:image’ content='https://martinagallo.com/images/thumbnail.png' />
+        <meta property=’og:description’ content='here is a blurb'/>
+        <meta property=’og:url’ content='https://martinagallo.com/index.html'/>
+        <meta property='og:image:width' content='1200' />
+        <meta property='og:image:height' content='627' />
     </head>
     <body>
         <header>
-            <img src="../images/src/513.gif" alt="Wind Emoji">
-            <a href="../html/index.html" class="name">Martina Gallo</a>
+             <!--<img src="../images/src/513.gif" class="emoji" alt="Wind Emoji">-->
+            <a href="../index.html" class="name">Martina Gallo</a>
+            <aside>
+                <a href="https://github.com/mgallodesign">
+                    <img src="../images/src/github-3.png"  class="icon" alt="GitHub">
+                </a>
+                <a href="https://www.instagram.com/mgallo.design/">
+                    <img src="../images/src/instagram-3.png" class="icon" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/martina-gallo-54a445183/">
+                    <img src="../images/src/linkedin-3.png" class="icon" alt="LinkedIn">
+                </a>
+                <a href="mailto:martinagallo.design@gmail.com">
+                    <img src="../images/src/email-3.png"  class="icon" alt="Email">
+                </a>
+                <!--<address class="tab">
+                    <a href="mailto:martinagallo.design@gmail.com" class="email">✉️</a>
+                </address>-->
+            </aside>
         </header>
+        
         <nav>
-            <p>Design</p>
-            <a href="../html/gkids.html">GKIDS</a>
-            <a href="../html/united.html">United Meat</a>
-            <a href="../html/ait.html">Abandon In Time</a>
-            <a href="../html/3beigebooks.html">3 Beige Books</a>
-            <a href="../html/socialforsoul.html">Social For The Soul</a>
-            <a href="../html/motion.html">Motion & Animation</a>
-            <a href="../html/ceres.html" class="last">Ceres</a>
-            <p>Writing</p>
-            <a href="../html/nonfiction.html">Non-Fiction</a>
-            <a href="../html/poetry.html">Shorts</a>
+            <a href="gkids.html" class="pages">GKIDS</a>
+            <a href="united.html" class="pages">United Meat</a>
+            <a href="ait.html" class="pages">Abandon In Time</a>
+            <a href="3beigebooks.html" class="pages">3 Beige Books</a>
+            <a href="socialforsoul.html" class="pages">Social For The Soul</a>
+            <a href="motion.html" class="pages">Motion & Animation</a>
+            <a href="writing.html" class="pages">Writing</a>
         </nav>
+
         <main>
-            <div class="pagetitle">
+            <div class="title">
                 <h2>Three Beige Books</h2>
-                <h4>An editorial series of books about erasure, loneliness, and shared differences</h4>
+                <h4>an editorial series of books about erasure, loneliness, and shared differences</h4>
             </div>
-
+            
+            <!--ALL BOOKS HERE-->
             <div class="container">
-                <div class="top">
-                    <ul>
-                        <li><a href="#img_1"><img src="../images/3bb/ALL3_Wood.jpg"></a></li>
-                        <li><a href="#img_2"><img src="../images/3bb/ALL3_Wood_BEHOLD.png"></a></li>
-                        <li><a href="#img_3"><img src="../images/3bb/ALL3_Wood_ERASE.png"></a></li>
-                        <li><a href="#img_4"><img src="../images/3bb/ALL3_Wood_ANA.png"></a></li>
-                    </ul>
-                    <a href="#_1" class="lightbox trans" id="img_1"><img src="../images/3bb/ALL3_Wood.jpg"></a>
-                    <a href="#_2" class="lightbox trans" id="img_2"><img src="../images/3bb/ALL3_Wood_BEHOLD.png"></a>
-                    <a href="#_3" class="lightbox trans" id="img_3"><img src="../images/3bb/ALL3_Wood_ERASE.png"></a>
-                    <a href="#_4" class="lightbox trans" id="img_4"><img src="../images/3bb/ALL3_Wood_ANA.png"></a>
-                </div>
+                <a data-fslightbox="first-lightbox" href="../images/3bb/ALL3_Wood_Stacked.jpg"><img src="../images/3bb/ALL3_Wood_Stacked.jpg"></a>
+                <a data-fslightbox="second-lightbox" href="../images/3bb/ALL3_Wood_Behold_1.jpg"></a>
+                <a data-fslightbox="first-lightbox" href="../images/3bb/ALL3_Wood_Erase.jpg"></a>
+                <a data-fslightbox="first-lightbox" href="../images/3bb/ALL3_Wood_Alone.jpg"></a>
+            </div>
+            <div class="paragraph">
+                <p>For this series, each central concept was curated based on a physical item or idea, which later informed each book's design and content. In order, they are "Erase Me", "At Night, Alone", and "Behold! I've brought you a man!"</p>
             </div>
 
-            <img src="../images/3bb/ALL3_Wood.jpg" class="singleshot">
-            <div class="multishot">
-                <img src="../images/3bb/ALL3_Wood_ANA.png">
-                <img src="../images/3bb/ALL3_Wood_BEHOLD.png">
-                <img src="../images/3bb/ALL3_Wood_ERASE.png">
+            <!--ERASE ME HERE-->
+            <div class="container">
+                <h5>1. Erase Me!</h5>
+                <br>
+                <a data-fslightbox="first-lightbox" href="../images/3bb/ERASE_Book_2.jpg"><img src="../images//3bb/ERASE_Book_2.jpg"></a>
+                <a data-fslightbox="first-lightbox" href="../images/3bb/ERASE_Book_1s.jpg"></a>
+                <a data-fslightbox="first-lightbox" href="../images/3bb/ERASE_Open_1.jpg"></a>
+                <a data-fslightbox="first-lightbox" href="../images/3bb/ERASE_Open_2.jpg"></a>
             </div>
-            <p>
-                Three Beige Books is an editorial series about erasure, loneliness, and shared similarities. Each central concept was curated based on an item or idea, which later informed each book's design and content. In order, they are "Erase Me", "At Night, Alone", and "Behold! I've brought you a man!"
-            </p>
-            <div class="multishot">
-                <img src="../images/3bb/ERASE_Open_1.png">
-                <img src="../images/3bb/ERASE_Cover_1.jpg">
-                <img src="../images/3bb/ERASE_Above_1.png">
-                <img src="../images/3bb/ERASE_Above_2.png">
+            <div class="paragraph">
+                <p>This publication was inspired by a mundane, everyday object: an eraser. You might erase something in order to clean marks, remove mistakes, or completely start over. However simple, the act of erasing is also part of our ability to comprehend language. Erasing words erases speech, therefore, it is just as important to understand how and why certain things are removed from a narrative. This book is centered around multiple acts of erasure—and whether each was purposeful (ie. censorship), inevitable (erosion), or accidental (mistakes). Some notable moments in "Erase Me" include a laser-cut dust jacket and a "missing" word key in the back of the book.</p>
             </div>
-            <br>
-            <p>
-                This publication was inspired by a mundane, everyday object: an eraser. You might erase something in order to clean marks, remove mistakes, or completely start over. However simple, the act of erasing is also part of our ability to comprehend language. Erasing words erases speech, therefore, it is just as important to understand how and why certain things are removed from a narrative. This book is centered around multiple acts of erasure—and whether each was purposeful (ie. censorship), inevitable (erosion), or accidental (mistakes).
-            </p>
-            <div class="multishot">
-                <img src="../images/3bb/ANA_Open_1.png">
-                <img src="../images/3bb/ANA_Cover_1.jpg">
-                <img src="../images/3bb/ANA_Above_1.jpg">
-                <img src="../images/3bb/ANA_Above_2.jpg">
+
+            <!--AT NIGHT ALONE HERE-->
+            <div class="container">
+                <h5>2. At Night, Alone...</h5>
+                <br>
+                <a data-fslightbox="first-lightbox" href="../images/3bb/ANA_Book_2.jpg"><img src="../images/3bb/ANA_Book_2.jpg"></a>
+                <a data-fslightbox="first-lightbox" href="../images/3bb/ANA_Book_1.jpg"></a>
+                <a data-fslightbox="first-lightbox" href="../images/3bb/ANA_Book_3.jpg"></a>
+                <a data-fslightbox="first-lightbox" href="../images/3bb/ANA_Open_1.jpg"></a>
+                <a data-fslightbox="first-lightbox" href="../images/3bb/ANA_Open_2.jpg"></a>
             </div>
-            <p>
-                This publication is centered around physical manifestations of isolation and loneliness. So much art has been (in)famously borne from suffering from solitude. While so much media surrounding reclusion is bleak, there are positives to reserving time for oneself away from the noise of the outside world.
-            </p>
-            <img src="../images/3bb/ANA_Jacket_2.png">
-            <br>
-            <p>
-                Behold! is a publication founded around the phrase “Same, But Different”. As part of our brain's ability to keep us alive, we cultivate the skill of recognizing patterns, even if at that moment, they aren't at the forefront of our minds. Finding similarities between different people, places, things, etc. is a fleeting connection, but often yields interesting matches.
-            </p>
-            <div class="multishot">
-                <img src="../images/3bb/BEHOLD_Cover_1.jpg">
-                <img src="../images/3bb/BEHOLD_Open_1.png">
-                <img src="../images/3bb/BEHOLD_Above_1.jpg">
-                <img src="../images/3bb/BEHOLD_Above_2.jpg">
+            <div class="paragraph">
+                <p>This publication is centered around physical manifestations of isolation and loneliness. So much art has been (in)famously borne from suffering from solitude. While so much media surrounding reclusion is bleak, there are positives to reserving time for oneself away from the noise of the outside world. Shown here is an unfolded visualization of the dust jacket for "At Night, Alone". It shows stills from a short animation, paired with descriptive captions paired with timestamps on the opposite side of the page.</p>
             </div>
-            <br>s
+           
+            <!--BEHOLD MAN HERE-->
+            <div class="container">
+                <h5>3. Behold! I've brought you a man!</h5>
+                <br>
+                <a data-fslightbox="first-lightbox" href="../images/3bb/BEHOLD_Book_2.jpg"><img src="../images/3bb/BEHOLD_Book_2.jpg"></a>
+                <a data-fslightbox="first-lightbox" href="../images/3bb/BEHOLD_Book_1.jpg"></a>
+                <a data-fslightbox="first-lightbox" href="../images/3bb/BEHOLD_Open_1.jpg"></a>
+                <a data-fslightbox="first-lightbox" href="../images/3bb/BEHOLD_Open_2.jpg"></a>
+            </div>
+            <div class="paragraph">
+                <p>Behold! is a publication founded around the phrase “Same, But Different”. As part of our brain's ability to keep us alive, we cultivate the skill of recognizing patterns, even if at that moment, they aren't at the forefront of our minds. Finding similarities between different people, places, things, etc. is a fleeting connection, but often yields interesting matches. The front & back covers are a direct reference to a famous, Ancient Greek anecdote: "According to Diogenes Laërtius, when Plato gave the tongue-in-cheek definition of man as "featherless bipeds", Diogenes plucked a chicken and brought it into Plato's Academy, saying, "Behold! I've brought you a man", and so the academy added "with broad flat nails" to the definition."</p>
+            </div>
         </main>
         <footer>
-            <a href="https://www.linkedin.com/in/martina-gallo-54a445183/" class="tab">
-                <img src="../images/src/linkedin.svg" class="icon" alt="LinkedIn">
-            </a>
-            <a href="https://www.instagram.com/mgallo.design/" class="tab">
-                <img src="../images/src/instagram.svg" class="icon" alt="Instagram">
-            </a>
-            <a href="https://github.com/mgallodesign" class="tab">
-                <img src="../images/src/github.svg"  class="icon" alt="GitHub">
-            </a>
-            <address class="tab">
-                <a href="mailto:martinagallo.design@gmail.com" class="email">✉️</a>
-            </address>
+            <p>© 2024 Martina Gallo</p>
         </footer>
+        <script src="../js/fslightbox.js"></script> 
     </body>
 </html>

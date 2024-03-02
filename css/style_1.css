@@ -1,0 +1,225 @@
+:root {
+    --blue: #08446C;
+    --pink: #EEAAC7;
+    --cream: #FBF1EB;
+    --main: 'Fraunces', serif;
+    --second: 'DM Mono', monospace;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-family: var(--main);
+    font-style: normal;
+    text-decoration: none;
+    color: var(--blue);
+  }
+
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--cream);
+    background-image:  radial-gradient(var(--cream) 0.9px, transparent 0.9px), radial-gradient(var(--cream) 0.9px, var(--pink) 0.9px);
+    background-size: 36px 36px;
+    background-position: 0 0,18px 18px;
+    overflow: hidden;
+    animation: RotatePostcard 1.5s ease-out;
+    /* display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center; */
+  }
+
+  .flipCard {
+    transform: rotateY(180deg);
+  }
+
+  .maincontainer {
+    position: absolute;
+    width: 68%;
+    height: 75%;
+    background: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+  }
+
+  .front {
+    position: absolute;
+    background-color: var(--cream);
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    backface-visibility: hidden;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* GRID AREA NAMES - REFERS TO BODY'S DISPLAY: GRID */
+  .address {
+    grid-area: address;
+  }
+  .stamp {
+    grid-area: stamp;
+  }
+  .bio {
+    grid-area: bio;
+  }
+  .right {
+    grid-area: right;
+  }
+  footer {
+    grid-area: footer;
+  }
+
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    color: var(--blue);
+    background-color: var(--cream);
+    /* BACKSIDE GRID FEATURES */
+    display: grid;
+    grid-template-columns: [column1] 1.25fr [column2] 1fr;
+    grid-template-rows: [row1] auto [row2] 1fr [row3] auto;
+    grid-template-areas: "address stamp" "bio right" "footer footer";
+    gap: 0vh 2vw;
+    place-items: start;
+  }
+
+  .address {
+    padding: 5%;
+    font-size: 120%;
+    line-height: 1.5rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  .stamp {
+    padding: 5%;
+    filter: drop-shadow(0 .25rem .25rem rgba(0, 0, 0, 0.153));
+    justify-self: end;
+    width: 25%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .bio {
+    width: 80%;
+    padding: 10%;
+    text-align: center;
+    color: var(--blue);
+    line-height: 1.75rem;
+    font-size: 1.20rem;
+    border-right: var(--blue) 3px solid;
+    justify-self: center;
+    align-self: center;
+    font-family: var(--second);
+  }
+
+  .right {
+    height: auto;
+    width: 90%;
+    margin: 5%;
+    justify-self: center;
+    align-self: center;
+    font-family: var(--second);
+  }
+
+  .line {
+    border-bottom: var(--blue);
+    height: 1px;
+    background: black;
+    width: 100%;
+  }
+
+  hr {
+    margin: 8%;
+    border-bottom: 2px solid var(--blue);
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--blue);
+  }
+  
+  a:link {
+    color: yellowgreen;
+  }
+  
+  a:visited {
+    color: var(--pink);
+    background-color: var(--blue);
+  }
+  
+  a:focus {
+    text-decoration: none;
+    color: var(--pink);
+    background: var(--blue);
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: var(--cream);
+  }
+
+  footer {
+    justify-self: center;
+    text-align: center;
+    line-height: 1.25rem;
+    padding: 1%;
+  } 
+ 
+  /* MEDIA QUEREY FOR SMALL DEVICES */
+  @media all and (max-width: 500px) {
+
+  }
+  
+  /* Styles for mobile and tablets */
+  @media only screen and (max-width: 1023px) {
+    .slider-wrapper .slide-button {
+      display: none !important;
+    }
+    .slider-wrapper .image-list {
+      gap: 10px;
+      margin-bottom: 15px;
+      scroll-snap-type: x mandatory;
+    }
+    .slider-wrapper .image-list .image-item {
+      width: 280px;
+      height: 380px;
+    }
+    .slider-scrollbar .scrollbar-thumb {
+      width: 20%;
+    }
+  }
+  
+  /* ANIMATION IS LAST, ALWAYS */
+  @keyframes RotatePostcard {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(30deg);
+  }
+}
