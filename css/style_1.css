@@ -25,12 +25,7 @@
     background-image:  radial-gradient(var(--cream) 0.9px, transparent 0.9px), radial-gradient(var(--cream) 0.9px, var(--pink) 0.9px);
     background-size: 36px 36px;
     background-position: 0 0,18px 18px;
-    overflow: hidden;
     animation: RotatePostcard 1.5s ease-out;
-    /* display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center; */
   }
 
   .flipCard {
@@ -39,8 +34,8 @@
 
   .maincontainer {
     position: absolute;
-    width: 68%;
-    height: 75%;
+    width: 80vw;
+    height: 80vh;
     background: none;
     top: 50%;
     left: 50%;
@@ -48,6 +43,7 @@
   }
 
   .card {
+    border-radius: 2px;
     position: relative;
     width: 100%;
     height: 100%;
@@ -89,23 +85,29 @@
 
   .back {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    padding: 2%;
+    width: 96%;
+    height: 96%;
     backface-visibility: hidden;
     transform: rotateY(180deg);
     color: var(--blue);
     background-color: var(--cream);
-    /* BACKSIDE GRID FEATURES */
+  }
+
+  .holder {
+    /* GRID FEATURES */
+    width: 100%;
+    height: 100%;
     display: grid;
     grid-template-columns: [column1] 1.25fr [column2] 1fr;
     grid-template-rows: [row1] auto [row2] 1fr [row3] auto;
     grid-template-areas: "address stamp" "bio right" "footer footer";
-    gap: 0vh 2vw;
+    gap: 1vh 2vw;
     place-items: start;
+    justify-content: center;
   }
 
   .address {
-    padding: 5%;
     font-size: 120%;
     line-height: 1.5rem;
     width: 100%;
@@ -113,7 +115,6 @@
   }
 
   .stamp {
-    padding: 5%;
     filter: drop-shadow(0 .25rem .25rem rgba(0, 0, 0, 0.153));
     justify-self: end;
     width: 25%;
@@ -122,8 +123,7 @@
   }
 
   .bio {
-    width: 80%;
-    padding: 10%;
+    padding: 8%;
     text-align: center;
     color: var(--blue);
     line-height: 1.75rem;
@@ -137,17 +137,9 @@
   .right {
     height: auto;
     width: 90%;
-    margin: 5%;
     justify-self: center;
     align-self: center;
     font-family: var(--second);
-  }
-
-  .line {
-    border-bottom: var(--blue);
-    height: 1px;
-    background: black;
-    width: 100%;
   }
 
   hr {
@@ -187,30 +179,95 @@
     justify-self: center;
     text-align: center;
     line-height: 1.25rem;
-    padding: 1%;
   } 
  
-  /* MEDIA QUEREY FOR SMALL DEVICES */
-  @media all and (max-width: 500px) {
-
-  }
-  
-  /* Styles for mobile and tablets */
-  @media only screen and (max-width: 1023px) {
-    .slider-wrapper .slide-button {
-      display: none !important;
+  /* MEDIA QUEREY FOR DEVICES SMALLER THAN THE MAX WIDTH */
+  @media all and (max-width: 768px) {
+    body {
+      margin: 5%;
+      width: auto;
+      height: auto;
+      display: block;
+      position: static;
+      animation: none;
     }
-    .slider-wrapper .image-list {
-      gap: 10px;
-      margin-bottom: 15px;
-      scroll-snap-type: x mandatory;
+    .flipCard {
+      transform: none;
     }
-    .slider-wrapper .image-list .image-item {
-      width: 280px;
-      height: 380px;
+    .maincontainer {
+      position: static;
+      display: block;
+      width: auto;
+      height: auto;
+      background: none;
+      transform: none;
     }
-    .slider-scrollbar .scrollbar-thumb {
-      width: 20%;
+    .card {
+      position: static;
+      margin: auto;
+      width: auto;
+      height: auto;
+      transition: none;
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 2vh 0vw;
+    }
+    .front {
+      position: static;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      cursor: auto;
+    }
+    img {
+      border: var(--blue) 2px solid;
+      width: 99%;
+      height: 99%;
+      object-fit: cover;
+    }
+    .back {
+      padding: 5%;
+      display: block;
+      position: static;
+      width: auto;
+      height: auto;
+      transform: none;
+    }
+    .holder {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 3vh 0vw;
+      justify-content: center;
+      align-content: center;
+    }
+    .address {
+      font-size: 110%;
+      width: 100%;
+      height: auto;
+      text-align: center;
+    }
+    .address > p {
+      font-size: 150%;
+      line-height: 2rem;
+    }
+    .stamp {
+      display: none;
+    }
+    .bio {
+      padding: 0;
+      line-height: 1.5rem;
+      font-size: 1rem;
+      border-right: var(--blue) 0px solid;
+    }
+    .right {
+      display: none;
+    }
+    footer {
+      display: block;
+      line-height: 1.5rem;
+    }
+    footer > p {
+      display: none;
     }
   }
   

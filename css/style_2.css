@@ -50,8 +50,7 @@ body {
   grid-template-rows: [row1] auto [row2] 1fr [row3] auto;
   grid-template-areas: "header header" "nav main" "footer footer";
   gap: 30px 30px;
-  place-items: start;
-  cursor: url(../images/src/513.gif); 
+  place-items: start; 
 }
 
 /* MASTHEAD GOES HERE (FLEX) */
@@ -95,13 +94,12 @@ aside {
 
 .icon {
   padding: 2%;
-  background-color: var(--cream);
   transition: all .25s ease-in-out;
 }
 
 .icon:hover {
   transform: translateY(5px);
-  filter: hue-rotate(120deg);
+  filter: hue-rotate(100deg);
   opacity: 30%;
 }
 
@@ -113,8 +111,9 @@ nav {
   position: sticky;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: start;
+  gap: 1ch;
 }
 
 .pages {
@@ -166,7 +165,7 @@ div.container {
 
 div.paragraph {
   padding: 2%;
-  background-image: url('../images/src/comictexture3.png');
+  background-image: url('../images/src/comictexture2.png');
   background-color: var(--cream);
   background-position: left top;
   background-size: 100%;
