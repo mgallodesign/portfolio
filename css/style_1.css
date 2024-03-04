@@ -153,11 +153,12 @@
   }
   
   a:link {
-    color: yellowgreen;
+    color: var(--pink);
   }
   
   a:visited {
     color: var(--pink);
+    color: yellowgreen;
     background-color: var(--blue);
   }
   
@@ -277,6 +278,9 @@
     transform: rotateY(0deg);
   }
   50% {
-    transform: rotateY(30deg);
+    transform: rotateY(360deg);
+  }
+  100% {
+    transform: rotateY(0deg);
   }
 }
