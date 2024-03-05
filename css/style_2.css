@@ -165,7 +165,7 @@ div.container {
 
 div.paragraph {
   padding: 2%;
-  background-image: url('../images/src/comictexture2.png');
+  background-image: url('../images/web/comictexture2.png');
   background-color: var(--cream);
   background-position: left top;
   background-size: 100%;
