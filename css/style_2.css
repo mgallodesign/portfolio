@@ -201,38 +201,3 @@ footer > p {
 @media all and (max-width: 500px) {
   
 }
-
-/* Styles for mobile and tablets */
-@media only screen and (max-width: 1023px) {
-  .slider-wrapper .slide-button {
-    display: none !important;
-  }
-  .slider-wrapper .image-list {
-    gap: 10px;
-    margin-bottom: 15px;
-    scroll-snap-type: x mandatory;
-  }
-  .slider-wrapper .image-list .image-item {
-    width: 280px;
-    height: 380px;
-  }
-  .slider-scrollbar .scrollbar-thumb {
-    width: 20%;
-  }
-  .pages {
-    display: flex;
-    flex-flow: column wrap;
-  }
-}
-
-/* ANIMATION IS LAST, ALWAYS */
-@keyframes SlideInX {
-0% {
-  transform: translateX(5%);
-  opacity: 0.1;
-}
-100% {
-  transform: translateX(0);
-  opacity: 1;
-}
-}
