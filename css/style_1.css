@@ -85,9 +85,8 @@
 
   .back {
     position: absolute;
-    padding: 2%;
-    width: 96%;
-    height: 96%;
+    width: 100%;
+    height: 100%;
     backface-visibility: hidden;
     transform: rotateY(180deg);
     color: var(--blue);
@@ -96,8 +95,9 @@
 
   .holder {
     /* GRID FEATURES */
-    width: 100%;
-    height: 100%;
+    padding: 2%;
+    width: 96%;
+    height: 96%;
     display: grid;
     grid-template-columns: [column1] 1.25fr [column2] 1fr;
     grid-template-rows: [row1] auto [row2] 1fr [row3] auto;
@@ -215,7 +215,7 @@
     }
     .front {
       position: static;
-      background-color: transparent;
+      background-color: var(--cream);
       width: 100%;
       height: 100%;
       cursor: auto;
@@ -227,12 +227,13 @@
       object-fit: cover;
     }
     .back {
-      padding: 5%;
+      padding: 0%;
       display: block;
       position: static;
       width: auto;
       height: auto;
       transform: none;
+      background-color: transparent;
     }
     .holder {
       display: flex;
@@ -278,6 +279,6 @@
     transform: rotateY(0deg);
   }
   50% {
-    transform: rotateY(180deg);
+    transform: rotateY(45deg);
   }
 }
