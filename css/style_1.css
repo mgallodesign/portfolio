@@ -1,284 +1,349 @@
 :root {
-    --blue: #08446C;
-    --pink: #EEAAC7;
-    --cream: #FBF1EB;
-    --main: 'Fraunces', serif;
-    --second: 'DM Mono', monospace;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  html {
-    font-family: var(--main);
-    font-style: normal;
-    text-decoration: none;
-    color: var(--blue);
+  --blue: #08446C;
+  --pink: #EEAAC7;
+  --cream: #FBF1EB;
+  --main: 'Fraunces', serif;
+  --second: 'DM Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: var(--blue);
+  font-size: small;
+  font-family: var(--main);
+  font-style: normal;
+  text-decoration: none;
+  line-height: 1em;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--cream);
+  background-image:  radial-gradient(var(--cream) 0.9px, transparent 0.9px), radial-gradient(var(--cream) 0.9px, var(--pink) 0.9px);
+  background-size: 36px 36px;
+  background-position: 0 0,18px 18px;
+}
+
+label {
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  display: block;
+  width: 60%;
+  height: 70%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.card {
+  padding: 2%;
+  background-color: var(--cream);
+  border-radius: 2px;
+  /*  */
+  position: relative;
+  height: 96%;
+  width: 96%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all 600ms;
+  transition: all 600ms;
+  z-index: 20;
+}
+
+  .card div {
+      position: absolute;
+      height: 94%;
+      width: 96%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 2px;
   }
 
+  .card .back {
+      background: var(--blue);
+      color: var(--pink);
+      object-fit: cover;
+      -webkit-transform: rotateX(180deg);
+      transform: rotateX(180deg);
+  }
+
+label:hover .card {
+  -webkit-transform: rotateX(20deg);
+  transform: rotateX(20deg);
+  box-shadow: 0 20px 20px rgba(50,50,50,.2);
+}
+
+input {
+  display: none;
+}
+
+:checked + .card {
+  transform: rotateX(180deg);
+  -webkit-transform: rotateX(180deg);
+}
+
+label:hover :checked + .card {
+  transform: rotateX(160deg);
+  -webkit-transform: rotateX(160deg);
+  box-shadow: 0 20px 20px rgba(255,255,255,.2);
+}
+
+/* GRID AREA NAMES - REFERS TO BODY'S DISPLAY: GRID */
+.address {
+  grid-area: address;
+}
+.stamp {
+  grid-area: stamp;
+}
+.bio {
+  grid-area: bio;
+}
+.right {
+  grid-area: right;
+}
+footer {
+  grid-area: footer;
+}
+
+.front {
+  /* GRID FEATURES */
+  width: 96%;
+  height: 96%;
+  display: grid;
+  grid-template-columns: [column1] 1.25fr [column2] 1fr;
+  grid-template-rows: [row1] .25fr [row2] 1fr [row3] auto;
+  grid-template-areas: "address stamp" "bio right" "footer footer";
+  gap: 1.5vh 0vw;
+  place-items: start;
+  justify-content: center;
+}
+
+.address {
+  font-size: 120%;
+  line-height: 1.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.stamp {
+  filter: drop-shadow(0 .25rem .25rem rgba(0, 0, 0, 0.153));
+  justify-self: end;
+  width: 25%;
+  height: auto;
+  object-fit: cover;
+}
+
+.bio {
+  padding: 8%;
+  text-align: center;
+  color: var(--blue);
+  line-height: 1.75rem;
+  border-right: var(--blue) 3px solid;
+  justify-self: center;
+  align-self: center;
+  font-family: var(--second);
+}
+
+.right {
+  text-align: center;
+  height: auto;
+  width: 90%;
+  justify-self: center;
+  align-self: center;
+  font-family: var(--second);
+}
+
+hr {
+  margin: 8%;
+  border-bottom: 2px solid var(--blue);
+}
+
+a {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+a:link {
+  color: var(--pink);
+}
+
+a:visited {
+  color: var(--pink);
+  color: yellowgreen;
+  background-color: var(--blue);
+}
+
+a:focus {
+  text-decoration: none;
+  color: var(--pink);
+  background: var(--blue);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--cream);
+}
+
+footer {
+  justify-self: center;
+  text-align: center;
+  line-height: 1.25rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* MEDIA QUEREY FOR DEVICES SMALLER THAN THE MAX WIDTH */
+@media all and (max-width: 768px) {
   body {
     width: 100vw;
     height: 100vh;
-    background-color: var(--cream);
-    background-image:  radial-gradient(var(--cream) 0.9px, transparent 0.9px), radial-gradient(var(--cream) 0.9px, var(--pink) 0.9px);
-    background-size: 36px 36px;
-    background-position: 0 0,18px 18px;
-    animation: RotatePostcard 1.5s ease-out;
+    font-size: small;
+    text-align: left;
+    display: block;
+    position: static;
   }
-
-  .flipCard {
-    transform: rotateY(180deg);
-  }
-
-  .maincontainer {
-    position: absolute;
-    width: 80vw;
-    height: 80vh;
-    background: none;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .card {
-    border-radius: 2px;
-    position: relative;
-    width: 100%;
+  label {
+    margin: auto;
+    width: 75%;
     height: 100%;
-    transform-style: preserve-3d;
-    transition: all 0.8s ease;
-  }
-
-  .front {
-    position: absolute;
-    background-color: var(--cream);
-    width: 100%;
-    height: 100%;
+    left: 0;
+    top: 0;
+    /*  */
+    -webkit-perspective: 0px;
+    perspective: none;
+    -webkit-transform-style: flat;
+    transform-style: flat;
+    display: block;
+    position: static;
+    left: 0%;
+    top: 0%;
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
     cursor: pointer;
-    backface-visibility: hidden;
   }
-
-  img {
-    width: 100%;
+  .card {
+    padding: 5%;
+    position: static;
     height: 100%;
-    object-fit: cover;
-  }
-
-  /* GRID AREA NAMES - REFERS TO BODY'S DISPLAY: GRID */
-  .address {
-    grid-area: address;
-  }
-  .stamp {
-    grid-area: stamp;
-  }
-  .bio {
-    grid-area: bio;
-  }
-  .right {
-    grid-area: right;
-  }
-  footer {
-    grid-area: footer;
-  }
-
-  .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    transform: rotateY(180deg);
-    color: var(--blue);
+    width: auto;
+    -webkit-transform-style: flat;
+    transform-style: flat;
+    -webkit-transition: none 0ms;
+    transition: none 0ms;
+    z-index: 0;
     background-color: var(--cream);
+    display: block;
+    transform-style: flat;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3vh;
+    justify-content: start;
+    flex-direction: column-reverse;
   }
-
-  .holder {
-    /* GRID FEATURES */
-    padding: 2%;
-    width: 96%;
-    height: 96%;
-    display: grid;
-    grid-template-columns: [column1] 1.25fr [column2] 1fr;
-    grid-template-rows: [row1] auto [row2] 1fr [row3] auto;
-    grid-template-areas: "address stamp" "bio right" "footer footer";
-    gap: 1vh 2vw;
-    place-items: start;
+  .card div {
+    transform-style: flat;
+    position: static;
+    height: auto;
+    width: 100%;
+    background: transparent;
+    text-align: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 2px;
+  }
+  .card .back {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+  }
+  label:hover .card {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    box-shadow: 0 0px 0px transparent;
+  }
+  :checked + .card {
+    transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);
+  }
+  /*  */
+  .front {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3vh;
     justify-content: center;
-  }
-
-  .address {
-    font-size: 120%;
-    line-height: 1.5rem;
+    background: none;
+    transform: none;
+    transition: none;
+    position: static;
     width: 100%;
     height: 100%;
+    cursor: auto;
   }
-
-  .stamp {
-    filter: drop-shadow(0 .25rem .25rem rgba(0, 0, 0, 0.153));
-    justify-self: end;
-    width: 25%;
-    height: auto;
+  img {
+    border: var(--blue) 2px solid;
+    width: 99%;
+    height: 99%;
     object-fit: cover;
   }
-
-  .bio {
-    padding: 8%;
-    text-align: center;
-    color: var(--blue);
-    line-height: 1.75rem;
-    font-size: 1.20rem;
-    border-right: var(--blue) 3px solid;
-    justify-self: center;
-    align-self: center;
-    font-family: var(--second);
-  }
-
-  .right {
+  .back {
+    padding: 0%;
+    display: block;
+    position: static;
+    width: auto;
     height: auto;
-    width: 90%;
-    justify-self: center;
-    align-self: center;
-    font-family: var(--second);
+    transform: none;
+    background-color: transparent;
   }
-
-  hr {
-    margin: 8%;
-    border-bottom: 2px solid var(--blue);
-  }
-
-  a {
-    text-decoration: none;
-    color: var(--blue);
-  }
-  
-  a:link {
-    color: var(--pink);
-  }
-  
-  a:visited {
-    color: var(--pink);
-    color: yellowgreen;
-    background-color: var(--blue);
-  }
-  
-  a:focus {
-    text-decoration: none;
-    color: var(--pink);
-    background: var(--blue);
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  a:active {
-    color: var(--cream);
-  }
-
-  footer {
-    justify-self: center;
+  .address {
+    width: 100%;
+    height: auto;
     text-align: center;
-    line-height: 1.25rem;
-  } 
- 
-  /* MEDIA QUEREY FOR DEVICES SMALLER THAN THE MAX WIDTH */
-  @media all and (max-width: 768px) {
-    body {
-      margin: 5%;
-      width: auto;
-      height: auto;
-      display: block;
-      position: static;
-      animation: none;
-    }
-    .flipCard {
-      transform: none;
-    }
-    .maincontainer {
-      position: static;
-      display: block;
-      width: auto;
-      height: auto;
-      background: none;
-      transform: none;
-    }
-    .card {
-      position: static;
-      margin: auto;
-      width: auto;
-      height: auto;
-      transition: none;
-      display: flex;
-      flex-flow: column nowrap;
-      gap: 2vh 0vw;
-    }
-    .front {
-      position: static;
-      background-color: var(--cream);
-      width: 100%;
-      height: 100%;
-      cursor: auto;
-    }
-    img {
-      border: var(--blue) 2px solid;
-      width: 99%;
-      height: 99%;
-      object-fit: cover;
-    }
-    .back {
-      padding: 0%;
-      display: block;
-      position: static;
-      width: auto;
-      height: auto;
-      transform: none;
-      background-color: transparent;
-    }
-    .holder {
-      display: flex;
-      flex-flow: column nowrap;
-      gap: 3vh 0vw;
-      justify-content: center;
-      align-content: center;
-    }
-    .address {
-      font-size: 110%;
-      width: 100%;
-      height: auto;
-      text-align: center;
-    }
-    .address > p {
-      font-size: 150%;
-      line-height: 2rem;
-    }
-    .stamp {
-      display: none;
-    }
-    .bio {
-      padding: 0;
-      line-height: 1.5rem;
-      font-size: 1rem;
-      border-right: var(--blue) 0px solid;
-    }
-    .right {
-      display: none;
-    }
-    footer {
-      display: block;
-      line-height: 1.5rem;
-    }
-    footer > p {
-      display: none;
-    }
   }
-  
-  /* ANIMATION IS LAST, ALWAYS */
-  @keyframes RotatePostcard {
-  0% {
-    transform: rotateY(0deg);
+  .address > p {
+    line-height: 2rem;
   }
-  50% {
-    transform: rotateY(45deg);
+  .stamp {
+    display: none;
   }
+  .bio {
+    padding: 0;
+    line-height: 1.5rem;
+    border-right: var(--blue) 0px solid;
+  }
+  .right {
+    display: none;
+  }
+  footer {
+    display: block;
+    line-height: 1.5rem;
+  }
+  footer > p {
+    display: none;
+  }
+}
+
+/* ANIMATION IS LAST, ALWAYS */
+@keyframes RotatePostcard {
+0% {
+  transform: rotateY(0deg);
+}
+50% {
+  transform: rotateY(45deg);
+}
 }
