@@ -201,7 +201,7 @@ img {
 }
 
 /* MEDIA QUEREY FOR BIG LAPTOPS */
-@media all and (min-width: 1441px) {
+@media only screen and (min-width: 1500px) {
   .address {
     font-size: x-large;
     line-height: 2.5rem;
