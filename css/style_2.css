@@ -3,7 +3,6 @@
   --pink: #EEAAC7;
   --cream: #FBF1EB;
   --main: 'Fraunces', serif;
-  --second: 'DM Mono', monospace;
 }
 
 * {
@@ -172,7 +171,7 @@ div.paragraph {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: var(--blue);
-  font-family: var(--second);
+  font-family: var(--main);
   font-weight: 300;
   line-height: 1.5em;
 }

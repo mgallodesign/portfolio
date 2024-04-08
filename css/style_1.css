@@ -30,9 +30,7 @@ body {
 }
 
 label {
-  -webkit-perspective: 1000px;
   perspective: 1000px;
-  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   display: block;
   width: 60%;
@@ -40,7 +38,6 @@ label {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
@@ -49,22 +46,16 @@ label {
   padding: 2%;
   background-color: var(--cream);
   border-radius: 2px;
-  /*  */
   position: relative;
   height: 96%;
   width: 96%;
-  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transition: all 600ms;
   transition: all 600ms;
   z-index: 20;
 }
 
   .card div {
       position: absolute;
-      height: 94%;
-      width: 96%;
-      -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       border-radius: 2px;
   }
@@ -72,14 +63,14 @@ label {
   .card .back {
       background: var(--blue);
       color: var(--pink);
+      height: 95%;
+      width: 96%;
       object-fit: cover;
-      -webkit-transform: rotateX(180deg);
       transform: rotateX(180deg);
   }
 
 label:hover .card {
-  -webkit-transform: rotateX(20deg);
-  transform: rotateX(20deg);
+  transform: rotateX(10deg);
   box-shadow: 0 20px 20px rgba(50,50,50,.2);
 }
 
@@ -89,13 +80,11 @@ input {
 
 :checked + .card {
   transform: rotateX(180deg);
-  -webkit-transform: rotateX(180deg);
 }
 
 label:hover :checked + .card {
-  transform: rotateX(160deg);
-  -webkit-transform: rotateX(160deg);
-  box-shadow: 0 20px 20px rgba(255,255,255,.2);
+  transform: rotateX(170deg);
+  box-shadow: 0 20px 20px rgba(50,50,50,.2);
 }
 
 /* GRID AREA NAMES - REFERS TO BODY'S DISPLAY: GRID */
@@ -118,19 +107,19 @@ footer {
 .front {
   /* GRID FEATURES */
   width: 96%;
-  height: 96%;
+  height: 95%;
   display: grid;
   grid-template-columns: [column1] 1.25fr [column2] 1fr;
   grid-template-rows: [row1] .25fr [row2] 1fr [row3] auto;
   grid-template-areas: "address stamp" "bio right" "footer footer";
-  gap: 1.5vh 0vw;
+  gap: 1.5vh 1vw;
   place-items: start;
   justify-content: center;
 }
 
 .address {
-  font-size: 120%;
-  line-height: 1.5rem;
+  font-size: 150%;
+  line-height: 1.75rem;
   width: 100%;
   height: 100%;
 }
@@ -145,13 +134,14 @@ footer {
 
 .bio {
   padding: 8%;
+  height: 50%;
   text-align: center;
   color: var(--blue);
   line-height: 1.75rem;
   border-right: var(--blue) 3px solid;
   justify-self: center;
   align-self: center;
-  font-family: var(--second);
+  font-family: var(--main);
 }
 
 .right {
@@ -160,7 +150,7 @@ footer {
   width: 90%;
   justify-self: center;
   align-self: center;
-  font-family: var(--second);
+  font-family: var(--main);
 }
 
 hr {
@@ -179,7 +169,7 @@ a:link {
 
 a:visited {
   color: var(--pink);
-  color: yellowgreen;
+  color: #7AC74F;
   background-color: var(--blue);
 }
 
@@ -200,7 +190,8 @@ a:active {
 footer {
   justify-self: center;
   text-align: center;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
+  font-size: medium;
 }
 
 img {
@@ -209,97 +200,98 @@ img {
   object-fit: cover;
 }
 
+/* MEDIA QUEREY FOR BIG LAPTOPS */
+@media all and (min-width: 1441px) {
+  .address {
+    font-size: x-large;
+    line-height: 2.5rem;
+  }
+  .address > p {
+    line-height: 2.75rem;
+    font-size: xx-large;
+  }
+  .bio {
+    /* padding: 5%; */
+    font-size: x-large;
+    line-height: 2.5rem;
+    height: auto;
+  }
+  .right, footer {
+    font-size: x-large;
+  }
+}
+
+/* MEDIA QUEREY FOR REG LAPTOPS */
+@media all and (max-width: 1024px) {
+  label {
+    width: 75%;
+    height: 70%;
+  }
+  .bio {
+    padding: 5%;
+    font-size: small;
+    height: auto;
+  }
+}
+
 /* MEDIA QUEREY FOR DEVICES SMALLER THAN THE MAX WIDTH */
 @media all and (max-width: 768px) {
   body {
-    width: 100vw;
-    height: 100vh;
-    font-size: small;
-    text-align: left;
-    display: block;
-    position: static;
+    overflow: visible;
+    width: 100%;
+    text-align: center;
   }
   label {
-    margin: auto;
-    width: 75%;
+    width: 100%;
     height: 100%;
-    left: 0;
-    top: 0;
-    /*  */
-    -webkit-perspective: 0px;
-    perspective: none;
-    -webkit-transform-style: flat;
-    transform-style: flat;
+    /* position: relative;
+    display: flex;
+    flex-flow: column nowrap; */
     display: block;
     position: static;
-    left: 0%;
-    top: 0%;
-    -webkit-transform: translate(0%, 0%);
+    perspective: none;
+    transform-style: flat;
     transform: translate(0%, 0%);
     cursor: pointer;
+    pointer-events: none;
   }
   .card {
-    padding: 5%;
-    position: static;
-    height: 100%;
+    pointer-events: none;
+    padding: 2.5%;
     width: auto;
-    -webkit-transform-style: flat;
-    transform-style: flat;
-    -webkit-transition: none 0ms;
-    transition: none 0ms;
-    z-index: 0;
-    background-color: var(--cream);
-    display: block;
-    transform-style: flat;
+    height: 100%;
     display: flex;
     flex-flow: column nowrap;
-    gap: 3vh;
+    gap: 20px;
     justify-content: start;
     flex-direction: column-reverse;
+    background-color: var(--cream);
+    transform-style: flat;
+    /* transition: none 0ms; */
   }
   .card div {
     transform-style: flat;
     position: static;
-    height: auto;
-    width: 100%;
-    background: transparent;
-    text-align: center;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    border-radius: 2px;
   }
   .card .back {
-    -webkit-transform: rotateX(0deg);
+    width: auto;
+    height: auto;
     transform: rotateX(0deg);
   }
   label:hover .card {
-    -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
     box-shadow: 0 0px 0px transparent;
   }
-  :checked + .card {
-    transform: rotateX(0deg);
-    -webkit-transform: rotateX(0deg);
-  }
-  /*  */
   .front {
+    padding: 0%;
+    width: auto;
+    height: auto;
     display: flex;
     flex-flow: column nowrap;
-    gap: 3vh;
-    justify-content: center;
-    background: none;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
     transform: none;
-    transition: none;
-    position: static;
-    width: 100%;
-    height: 100%;
-    cursor: auto;
-  }
-  img {
-    border: var(--blue) 2px solid;
-    width: 99%;
-    height: 99%;
-    object-fit: cover;
   }
   .back {
     padding: 0%;
@@ -310,31 +302,39 @@ img {
     transform: none;
     background-color: transparent;
   }
+  img {
+    z-index: 1;
+    border: var(--blue) 2px solid;
+    width: 99%;
+    height: 99%;
+    object-fit: contain;
+  }
   .address {
-    width: 100%;
+    width: auto;
     height: auto;
-    text-align: center;
   }
   .address > p {
-    line-height: 2rem;
-  }
-  .stamp {
-    display: none;
+    line-height: 2.75rem;
+    font-size: xx-large;
   }
   .bio {
     padding: 0;
-    line-height: 1.5rem;
+    height: auto;
+    line-height: 1.75rem;
     border-right: var(--blue) 0px solid;
+    font-size: medium;
   }
   .right {
     display: none;
   }
   footer {
-    display: block;
     line-height: 1.5rem;
   }
-  footer > p {
+  .stamp, .right {
     display: none;
+  }
+  .pages, .links {
+    pointer-events: auto;
   }
 }
 
