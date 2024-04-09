@@ -188,6 +188,7 @@ a:active {
 }
 
 footer {
+  /* display: none; */
   justify-self: center;
   text-align: center;
   line-height: 1.5rem;

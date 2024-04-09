@@ -165,7 +165,8 @@ div.container {
 div.paragraph {
   padding: 2%;
   background-image: url('../images/web/comictexture2.png');
-  background-color: var(--cream);
+  /* background-blend-mode: multiply; */
+  background-color: #fbf1eb2e;
   background-position: left top;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -181,12 +182,12 @@ a > img {
 }
 
 h5 {
-  width: 75%;
+  width: 85%;
   margin: 1% 0 1% 0;
   padding: 2%;
   color: var(--cream);
   background-color: var(--blue);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-style: italic;
   line-height: 1.5em;
 }
