@@ -203,21 +203,21 @@ img {
 /* MEDIA QUEREY FOR BIG LAPTOPS */
 @media only screen and (min-width: 1500px) {
   .address {
-    font-size: x-large;
+    font-size: large;
     line-height: 2.5rem;
   }
   .address > p {
     line-height: 2.75rem;
-    font-size: xx-large;
+    font-size: x-large;
   }
   .bio {
     /* padding: 5%; */
-    font-size: x-large;
+    font-size: medium;
     line-height: 2.5rem;
     height: auto;
   }
   .right, footer {
-    font-size: x-large;
+    font-size: large;
   }
 }
 
